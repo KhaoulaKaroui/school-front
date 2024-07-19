@@ -5,7 +5,7 @@
             <div class="col-md-5 order-md-last">
                 <div class="login-wrap p-4 p-md-5">
                     <h3 class="mb-4">Login</h3>
-                    <form action="#" [formGroup]="loginForm" class="signup-form">
+                    <form action="#" class="signup-form">
 
                         <div class="form-group">
                             <label class="label" for="email">Email Address</label>
@@ -28,17 +28,18 @@
                         loginForm.controls['pwd'].dirty) ">
                             <div *ngIf="loginForm.controls['pwd'].errors?.['required']">Password is required</div>
                         </div>
+                    </form>
                 </div>
 
                 <div class="form-group d-flex justify-content-end mt-4">
                     <button type="submit" class="btn btn-primary submit"><span
                             class="fa fa-paper-plane"></span></button>
                 </div>
-                </form>
+             
                 <!-- <span>{{errorMsg}}</span> -->
                 <p class="text-center">don't you have an account? <a href="#inscription">Sign Up</a></p>
             </div>
         </div>
     </div>
-    </div>
+
 </section>
