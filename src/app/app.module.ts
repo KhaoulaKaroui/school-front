@@ -16,6 +16,7 @@ import { TeacherComponent } from './components/teacher/teacher.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { ArticleComponent } from './components/article/article.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ArticleComponent } from './components/article/article.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

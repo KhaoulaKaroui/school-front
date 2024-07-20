@@ -8,11 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
- 
 
-  constructor(
-private formBuilder: FormBuilder
-  ) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -21,4 +18,11 @@ private formBuilder: FormBuilder
     });
   }
 
+  // Méthode de soumission du formulaire
+  onSubmit(): void {
+    if (this.loginForm!.valid) {
+      // Effectuer l'authentification ou d'autres actions nécessaires
+      console.log(this.loginForm.value);
+    }
+  }
 }
