@@ -1,25 +1,48 @@
 <!-- login.component.html -->
-<br><br><br><br><br><br>
-<form [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" class="form-control" formControlName="email">
-      <div *ngIf="loginForm.get('email')?.errors?.['required']" class="text-danger">
-        Email is required
-      </div>
-      <div *ngIf="loginForm.get('email')?.errors?.['email']" class="text-danger">
-        Invalid email format
+<section class="hero-wrap hero-wrap-2" style="background-image: url('assets/images/bg_2.jpg');">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9  pb-5 text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                class="fa fa-chevron-right"></i></a></span> <span>Add Course <i class="fa fa-chevron-right"></i></span></p>
+        <h1 class="mb-0 bread">Add Course</h1>
       </div>
     </div>
-  
-    <div class="form-group">
-      <label for="pwd">Password</label>
-      <input type="password" id="pwd" class="form-control" formControlName="pwd">
-      <div *ngIf="loginForm.get('pwd')?.errors?.['required']" class="text-danger">
-        Password is required
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-5 order-md-last container">
+        <div class="p-4">
+          <form [formGroup]="loginForm" class="signup-form">
+
+            <div class="form-group">
+              <label class="label" for="email">Tel Number</label>
+              <input type="tel" class="form-control" formControlName="tel" placeholder="Mobile Number">
+            </div>
+            
+
+            <div class="form-group">
+              <label class="label" for="password">Password</label>
+              <input id="password-field" type="password" class="form-control" formControlName="pwd" placeholder="Password">
+            </div>
+           
+
+            <div class="form-group d-flex justify-content-end mt-4">
+              <button type="submit" [disabled]="loginForm.invalid" (click)="login()" class="btn btn-primary submit container">
+                <span class="fa fa-paper-plane"></span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
-  <br><br><br><br>
+  </div>
+</section>
+
+
+    

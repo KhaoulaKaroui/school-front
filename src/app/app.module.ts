@@ -16,7 +16,11 @@ import { TeacherComponent } from './components/teacher/teacher.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { ArticleComponent } from './components/article/article.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddCourseComponent } from './components/add-course/add-course.component';
+
 
 @NgModule({
   declarations: [
@@ -33,12 +37,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     TeacherComponent,
     CoursesComponent,
     TeachersComponent,
-    ArticleComponent
+    ArticleComponent,
+    DashboardComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
