@@ -20,6 +20,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
+import { DashStudentComponent } from './components/dash-student/dash-student.component';
+import { DashTeacherComponent } from './components/dash-teacher/dash-teacher.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { AddCourseComponent } from './components/add-course/add-course.component
     TeachersComponent,
     ArticleComponent,
     DashboardComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    DashStudentComponent,
+    DashTeacherComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
