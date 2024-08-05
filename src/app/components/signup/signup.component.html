@@ -92,6 +92,54 @@
 
           </div>
            
+          <div class="form-group">
+            <label class="label" for="email"> Speciality</label>
+            <input type="text" class="form-control" formControlName="speciality" placeholder="">
+          </div>
+          <div *ngIf="
+          signupForm.controls['speciality'].invalid &&
+          (signupForm.controls['speciality'].touched ||
+          signupForm.controls['speciality'].dirty)
+          ">
+            <div *ngIf="signupForm.controls['speciality'].errors?.['required']">Speciality is required</div>
+          </div>
+
+          <div class="form-group">
+            <label class="label" for="email"> CV </label>
+            <input type="file" class="form-control" #filePicker (change)="onFileSelected($event)"  (click)="filePicker.click()" formControlName="cv" placeholder="">
+          </div>
+          <div *ngIf="
+          signupForm.controls['cv'].invalid &&
+          (signupForm.controls['cv'].touched ||
+          signupForm.controls['cv'].dirty)
+          ">
+            <div *ngIf="signupForm.controls['cv'].errors?.['required']">CV is required</div>
+          </div>
+
+          <div class="form-group">
+            <label class="label" for="email"> Tel Child </label>
+            <input type="tel" class="form-control" formControlName="telChild" placeholder="">
+          </div>
+          <div *ngIf="
+          signupForm.controls['telChild'].invalid &&
+          (signupForm.controls['telChild'].touched ||
+          signupForm.controls['telChild'].dirty)
+          ">
+            <div *ngIf="signupForm.controls['telChild'].errors?.['required']">Tel Child is required</div>
+          </div>
+
+          <div class="form-group">
+            <label class="label" for="email"> Photo </label>
+            <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)" (click)="filePicker.click()" formControlName="pathPhoto" placeholder="">
+          </div>
+          <div *ngIf="
+          signupForm.controls['pathPhoto'].invalid &&
+          (signupForm.controls['pathPhoto'].touched ||
+          signupForm.controls['pathPhoto'].dirty)
+          ">
+            <div *ngIf="signupForm.controls['pathPhoto'].errors?.['required']"> Photo is required</div>
+          </div>
+          
             
             <div class="form-group d-flex justify-content-end mt-4">
               <button type="submit" [disabled]="signupForm.invalid" (click)="signup()" class="btn btn-primary submit container">
