@@ -17,17 +17,14 @@
   
         <div class="col-md-5 order-md-last container">
           <div class="p-4">
-            <form  class="signup-form">
+            <form #searchForm="ngForm" (ngSubmit)="searchTeacher()" class="signup-form">
   
               <div class="form-group">
                 <label class="label text-center container" for="email">Search For Teachers</label>
-                <input type="tel" class="form-control" formControlName="tel" placeholder=" Name ">
+                <input type="text" class="form-control" [(ngModel)]="user.speciality" [ngModelOptions]="{standalone:true}" placeholder=" Enter Speciality ">
               </div>
               
-  
-             
-             
-  
+
               <div class="form-group d-flex justify-content-end mt-4">
                 <button type="submit"  class="btn btn-primary submit container">
                   <span class="fa fa-paper-plane"></span> Search

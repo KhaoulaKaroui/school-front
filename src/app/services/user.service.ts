@@ -12,19 +12,19 @@ userURL: string= 'http://localhost:3000/api/users';
 
 
 
-  signup(user: any, photo: File, cv:File){
+  signup(user: any, photo: File){
     let fData = new FormData() ;
     fData.append("firstName", user.firstName);
     fData.append("lastName", user.lastName);
-    fData.append("email", user.email);
-    fData.append("address", user.address);
     fData.append("tel", user.tel);
+    fData.append("address", user.address);
+    fData.append("email", user.email);
     fData.append("pwd", user.pwd);
-    fData.append("role", user.role);
-    fData.append("pathPhoto", photo);
     fData.append("speciality", user.speciality);
-    fData.append("cv", cv);
     fData.append("telChild", user.telChild);
+    fData.append("pathPhoto", photo);
+    fData.append("role", user.role);
+    
     return this.http.post<{ isAdded: boolean}>(this.userURL + '/signup', fData);
   }
 

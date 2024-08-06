@@ -3,17 +3,19 @@
   <div class="container">
     <div class="row no-gutters slider-text align-items-end justify-content-center">
       <div class="col-md-9  pb-5 text-center">
-       <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Inscription <i class="fa fa-chevron-right"></i></span></p>
-       <h1 class="mb-0 bread">Signup</h1>
-     </div>
-   </div>
- </div>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                class="fa fa-chevron-right"></i></a></span> <span>Inscription <i class="fa fa-chevron-right"></i></span>
+        </p>
+        <h1 class="mb-0 bread">Signup {{role | titlecase }}</h1>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section >
+<section>
   <div class="container">
     <div class="row">
-      
+
       <div class="col-md-5 order-md-last container">
         <div class="p-4">
           <form [formGroup]="signupForm" class="signup-form">
@@ -25,10 +27,10 @@
                signupForm.controls['firstName'].invalid &&
                (signupForm.controls['firstName'].touched || 
                signupForm.controls['firstName'].dirty)">
-            <div *ngIf="signupForm.controls['firstName'].errors?.['required']">First Name is required</div>
-            <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']">Firs Name should have at least 3 chars
+              <div *ngIf="signupForm.controls['firstName'].errors?.['required']">First Name is required</div>
+              <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']">Firs Name should have at least 3 chars
+              </div>
             </div>
-          </div>
             <div class="form-group">
               <label class="label" for="name">Last Name</label>
               <input type="text" class="form-control" formControlName="lastName" placeholder="Doe">
@@ -37,10 +39,10 @@
                signupForm.controls['lastName'].invalid &&
                (signupForm.controls['lastName'].touched || 
                signupForm.controls['lastName'].dirty)">
-            <div *ngIf="signupForm.controls['lastName'].errors?.['required']">Last Name is required</div>
-            <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']">Last Name should have at least 3 chars
+              <div *ngIf="signupForm.controls['lastName'].errors?.['required']">Last Name is required</div>
+              <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']">Last Name should have at least 3 chars
+              </div>
             </div>
-          </div>
             <div class="form-group">
               <label class="label" for="name">Mobile</label>
               <input type="tel" class="form-control" formControlName="tel" placeholder="00000000">
@@ -49,10 +51,10 @@
                signupForm.controls['tel'].invalid &&
                (signupForm.controls['tel'].touched || 
                signupForm.controls['tel'].dirty)">
-            <div *ngIf="signupForm.controls['tel'].errors?.['required']">Tel is required</div>
-            <div *ngIf="signupForm.controls['tel'].errors?.['minlength']">Tel should have at least 8 chars
+              <div *ngIf="signupForm.controls['tel'].errors?.['required']">Tel is required</div>
+              <div *ngIf="signupForm.controls['tel'].errors?.['minlength']">Tel should have at least 8 chars
+              </div>
             </div>
-          </div>
             <div class="form-group">
               <label class="label" for="email"> Address</label>
               <input type="text" class="form-control" formControlName="address" placeholder="Tunis, Tunisia">
@@ -79,70 +81,91 @@
 
             <div class="form-group">
               <label class="label" for="password">Password</label>
-              <input id="password-field" type="password" formControlName="pwd" class="form-control" placeholder="Password">
+              <input id="password-field" type="password" formControlName="pwd" class="form-control"
+                placeholder="Password">
             </div>
             <div *ngIf="
           signupForm.controls['pwd'].invalid &&
           (signupForm.controls['pwd'].touched ||
           signupForm.controls['pwd'].dirty)
           ">
-          <div *ngIf="signupForm.controls['pwd'].errors?.['required']">Password is required</div>
-          <div *ngIf="signupForm.controls['pwd'].errors?.['minlength']">Password should have at least 6 chars</div>
-          <div *ngIf="signupForm.controls['pwd'].errors?.['maxlength']">Password should have at most 8 chars</div>
+              <div *ngIf="signupForm.controls['pwd'].errors?.['required']">Password is required</div>
+              <div *ngIf="signupForm.controls['pwd'].errors?.['minlength']">Password should have at least 6 chars</div>
+              <div *ngIf="signupForm.controls['pwd'].errors?.['maxlength']">Password should have at most 8 chars</div>
 
-          </div>
-           
-          <div class="form-group">
-            <label class="label" for="email"> Speciality</label>
-            <input type="text" class="form-control" formControlName="speciality" placeholder="">
-          </div>
-          <div *ngIf="
+            </div>
+
+            <div *ngIf="role === 'teacher'">
+              <div class="form-group">
+                <label class="label" for="email"> Speciality</label>
+                <input type="text" class="form-control" formControlName="speciality" placeholder="">
+              </div>
+              <div *ngIf="
           signupForm.controls['speciality'].invalid &&
           (signupForm.controls['speciality'].touched ||
           signupForm.controls['speciality'].dirty)
           ">
-            <div *ngIf="signupForm.controls['speciality'].errors?.['required']">Speciality is required</div>
-          </div>
+                <div *ngIf="signupForm.controls['speciality'].errors?.['required']">Speciality is required</div>
+              </div>
 
-          <div class="form-group">
-            <label class="label" for="email"> CV </label>
-            <input type="file" class="form-control" #filePicker (change)="onFileSelected($event)"  (click)="filePicker.click()" formControlName="cv" placeholder="">
-          </div>
-          <div *ngIf="
+
+<!-- 
+              <div class="form-group">
+                <label class="label" for="email"> CV </label>
+                <input type="file" class="form-control" #filePicker (change)="onFileSelected($event)"
+                  (click)="filePicker.click()" formControlName="cv" placeholder="">
+              </div> -->
+              <!-- <div *ngIf="
           signupForm.controls['cv'].invalid &&
           (signupForm.controls['cv'].touched ||
           signupForm.controls['cv'].dirty)
           ">
-            <div *ngIf="signupForm.controls['cv'].errors?.['required']">CV is required</div>
-          </div>
+                <div *ngIf="signupForm.controls['cv'].errors?.['required']">CV is required</div>
+              </div> -->
+            </div>
 
-          <div class="form-group">
-            <label class="label" for="email"> Tel Child </label>
-            <input type="tel" class="form-control" formControlName="telChild" placeholder="">
-          </div>
-          <div *ngIf="
+            <!-- -- Parent Specific Fields -->
+            <div *ngIf="role === 'parent'">
+              <div class="form-group">
+                <label class="label" for="email"> Tel Child </label>
+                <input type="tel" class="form-control" formControlName="telChild" placeholder="">
+              </div>
+              <div *ngIf="
           signupForm.controls['telChild'].invalid &&
           (signupForm.controls['telChild'].touched ||
           signupForm.controls['telChild'].dirty)
           ">
-            <div *ngIf="signupForm.controls['telChild'].errors?.['required']">Tel Child is required</div>
-          </div>
+                <div *ngIf="signupForm.controls['telChild'].errors?.['required']">Tel Child is required</div>
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label class="label" for="email"> Photo </label>
-            <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)" (click)="filePicker.click()" formControlName="pathPhoto" placeholder="">
-          </div>
-          <div *ngIf="
+            <!-- Student Specific Fields -->
+            <div *ngIf="role === 'student'">
+              <div class="form-group">
+                <!-- <label class="label" for="email"> Photo </label>
+                <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)"
+                  (click)="filePicker.click()" formControlName="pathPhoto" placeholder="">
+              </div>
+              <div *ngIf="
           signupForm.controls['pathPhoto'].invalid &&
           (signupForm.controls['pathPhoto'].touched ||
           signupForm.controls['pathPhoto'].dirty)
           ">
-            <div *ngIf="signupForm.controls['pathPhoto'].errors?.['required']"> Photo is required</div>
-          </div>
-          
+                <div *ngIf="signupForm.controls['pathPhoto'].errors?.['required']"> Photo is required</div> -->
+              </div>
+            </div>
             
+          <div class="form-group" style="visibility: hidden;">
+            <input type="file"  class="form-control" #filePicker (change)="onImageSelected($event)" >
+          </div>
+            <div class="form-group text-center">
+              <img [src]="imagePreview" alt="" class="mb-3" width="200px"> <br>
+              <button class="btn btn-success" (click)="filePicker.click()"> Select Your Photo </button>
+            </div>
+
             <div class="form-group d-flex justify-content-end mt-4">
-              <button type="submit" [disabled]="signupForm.invalid" (click)="signup()" class="btn btn-primary submit container">
+              <button type="submit"  (click)="signup()"
+                class="btn btn-primary submit container">
                 <span class="fa fa-paper-plane"></span>
               </button>
             </div>
