@@ -98,7 +98,7 @@
             <div *ngIf="role === 'teacher'">
               <div class="form-group">
                 <label class="label" for="email"> Speciality</label>
-                <input type="text" class="form-control" formControlName="speciality" placeholder="">
+                <input type="text" class="form-control" formControlName="speciality" placeholder="exp: Math">
               </div>
               <div *ngIf="
           signupForm.controls['speciality'].invalid &&
@@ -140,8 +140,8 @@
             </div>
 
             <!-- Student Specific Fields -->
-            <div *ngIf="role === 'student'">
-              <div class="form-group">
+            <!-- <div *ngIf="role === 'student'">
+              <div class="form-group"> -->
                 <!-- <label class="label" for="email"> Photo </label>
                 <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)"
                   (click)="filePicker.click()" formControlName="pathPhoto" placeholder="">
@@ -152,16 +152,16 @@
           signupForm.controls['pathPhoto'].dirty)
           ">
                 <div *ngIf="signupForm.controls['pathPhoto'].errors?.['required']"> Photo is required</div> -->
-              </div>
-            </div>
+              <!-- </div>
+            </div> -->
             
-          <div class="form-group" style="visibility: hidden;">
+          <!-- <div class="form-group" style="visibility: hidden;">
             <input type="file"  class="form-control" #filePicker (change)="onImageSelected($event)" >
           </div>
             <div class="form-group text-center">
               <img [src]="imagePreview" alt="" class="mb-3" width="200px"> <br>
               <button class="btn btn-success" (click)="filePicker.click()"> Select Your Photo </button>
-            </div>
+            </div> -->
 
             <div class="form-group d-flex justify-content-end mt-4">
               <button type="submit"  (click)="signup()"

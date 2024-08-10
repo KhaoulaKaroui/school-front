@@ -21,8 +21,8 @@
           <form [formGroup]="loginForm" class="signup-form">
 
             <div class="form-group">
-              <label class="label" for="email">Tel Number</label>
-              <input type="tel" class="form-control" formControlName="tel" placeholder="Mobile Number">
+              <label class="label" for="email">Email</label>
+              <input type="tel" class="form-control" formControlName="email" placeholder="Email">
             </div>
             
 
@@ -38,6 +38,7 @@
               </button>
             </div>
           </form>
+          <span>{{errorMsg}}</span>
         </div>
       </div>
     </div>

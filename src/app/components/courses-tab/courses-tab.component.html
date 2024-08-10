@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <table class="table ">
+        <thead class="table-light text-center">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Course's Name</th>
+              
+                <th scope="col">Duration</th>
+                <th scope="col">Description</th>
+                <th scope="col">Teacher</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+           
+            <tr *ngFor="let elt of coursesTab">
+                <td>{{elt._id}}</td>
+                <td>{{elt.name}}</td>
+                <td>{{elt.duration}}</td>
+                <td>{{elt.description}}</td>
+                <td>{{elt.teacher.firstName}}</td>
+              
+                <td>
+                    <button class="btn btn-info btn-sm" (click)="goToInfo(elt._id)">Display</button>
+                    <button class="btn btn-primary btn-sm" (click)="goToEditCourse(elt._id)">Edit</button> 
+                    <button class="btn btn-danger btn-sm" (click)="deleteCourse(elt._id)">Delete</button>
+                    <button class="btn btn btn-info btn-sm" (click)="goToAddStudent(elt._id)">Add Student</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+  
+
+   
+</div>

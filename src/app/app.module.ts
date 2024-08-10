@@ -23,6 +23,11 @@ import { AddCourseComponent } from './components/add-course/add-course.component
 import { DashStudentComponent } from './components/dash-student/dash-student.component';
 import { DashTeacherComponent } from './components/dash-teacher/dash-teacher.component';
 import { SearchComponent } from './components/search/search.component';
+import { UsersTabComponent } from './components/users-tab/users-tab.component';
+import { CoursesTabComponent } from './components/courses-tab/courses-tab.component';
+import { SearchCourseComponent } from './components/search-course/search-course.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
+import { CourseInfoComponent } from './components/course-info/course-info.component';
 
 
 @NgModule({
@@ -45,7 +50,12 @@ import { SearchComponent } from './components/search/search.component';
     AddCourseComponent,
     DashStudentComponent,
     DashTeacherComponent,
-    SearchComponent
+    SearchComponent,
+    UsersTabComponent,
+    CoursesTabComponent,
+    SearchCourseComponent,
+    EditCourseComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,

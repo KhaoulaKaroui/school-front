@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
   selectedPdfFile: any;
   actualPath: any;
   role: any = String;
+  test: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,7 +27,6 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.actualPath = this.router.url;
-
     // Récupère le rôle depuis les données de la route
     this.role = this.route.snapshot.data['role'];
 
@@ -54,8 +54,8 @@ export class SignupComponent implements OnInit {
 
 
 
-signup() {
-  if (this.actualPath == '/inscription') {
+  signup() {
+  if (this.actualPath == '/signupParent') {
     this.signupForm.value.role = 'parent';
   } else if (this.actualPath == '/signupAdmin') {
     this.signupForm.value.role = 'admin';
@@ -64,14 +64,17 @@ signup() {
   } else {
     this.signupForm.value.role = 'student';
   }
-  console.log("here signupForm", this.signupForm.value);
-  console.log("this.selectedFile", this.selectedFile);
-  this.userService.signup(this.signupForm.value, this.selectedFile).subscribe(
+  // console.log("here signupForm", this.signupForm.value);
+  // console.log("this.selectedFile", this.selectedFile);
+  // this.userService.signup(this.signupForm.value, this.selectedFile).subscribe(
+  console.log("signupForm",  this.signupForm.value);
+  
+  this.userService.signup(this.signupForm.value).subscribe(
     (response) => {
       console.log("here response Signup from BE", response.isAdded);
-      this.router.navigate(['signin'])
+      this.router.navigate(['signin']);
     }
-  )
+  );
 }
 
 onImageSelected(event: Event) {

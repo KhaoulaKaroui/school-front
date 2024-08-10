@@ -1,0 +1,91 @@
+<div class="container mt-5">
+    <!-- Teachers Table -->
+    <h3 class="text-center " style="color: #915DE7; font-family: cursive ; background-color: #e3d5e9; ">Teachers</h3>
+    <table class="table ">
+        <thead class="table-light text-center">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Speciality</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <!-- <tr *ngIf="role === 'teacher'"> -->
+                <tr *ngFor="let elt of teachersTab">
+                    <td>{{elt._id}}</td>
+                    <td>{{elt.firstName}}</td>
+                    <td>{{elt.lastName}}</td>
+                    <td>{{elt.email}}</td>
+                    <td>{{elt.tel}}</td>
+                    <td>{{elt.speciality}}</td>
+                <td>
+                    <button class="btn btn-success btn-sm">Validate</button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteUser(elt._id)">Delete</button>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Students Table -->
+    <h3 class="text-center " style="color: #915DE7; font-family: cursive ; background-color: #e3d5e9;  ">Students</h3>
+    <table class="table ">
+        <thead class="table-light text-center" >
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+           
+            <!-- <tr *ngIf="role === 'student'"> -->
+                <tr *ngFor="let elt of studentsTab">
+                    <td>{{elt._id}}</td>
+                    <td>{{elt.firstName}}</td>
+                    <td>{{elt.lastName}}</td>
+                    <td>{{elt.email}}</td>
+                    <td>{{elt.tel}}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="deleteUser(elt._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Parents Table -->
+    <h3 class="text-center " style="color: #915DE7; font-family: cursive; background-color: #e3d5e9;  ">Parents</h3>
+    <table class="table ">
+        <thead class="table-light text-center">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            
+            <!-- <tr *ngIf="role === 'parent'"> -->
+                <tr *ngFor="let elt of parentsTab">
+                <td>{{elt._id}}</td>
+                <td>{{elt.firstName}}</td>
+                <td>{{elt.lastName}}</td>
+                <td>{{elt.email}}</td>
+                <td>{{elt.tel}}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="deleteUser(elt._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

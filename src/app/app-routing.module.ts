@@ -10,6 +10,10 @@ import { TeachersComponent } from './components/teachers/teachers.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashStudentComponent } from './components/dash-student/dash-student.component';
 import { DashTeacherComponent } from './components/dash-teacher/dash-teacher.component';
+import { SearchCourseComponent } from './components/search-course/search-course.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
+import { CourseComponent } from './components/course/course.component';
+import { CourseInfoComponent } from './components/course-info/course-info.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -20,12 +24,14 @@ const routes: Routes = [
   { path: 'signupParent', component: SignupComponent, data: { role: 'parent' } },
   { path: 'addCourse', component: AddCourseComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'courseInfo/:id', component: CourseInfoComponent },
   { path: 'courses', component: CoursesComponent },
-  { path: 'teachers', component: TeachersComponent },
   { path: 'teachers', component: TeachersComponent },
   { path: 'admin', component: DashboardComponent },
   { path: 'dashStudent', component: DashStudentComponent },
   { path: 'dashTeacher', component: DashTeacherComponent },
+  { path: 'searchCourse', component: SearchCourseComponent },
+  { path: 'editCourse/:id', component: EditCourseComponent },
 
 
 ];
